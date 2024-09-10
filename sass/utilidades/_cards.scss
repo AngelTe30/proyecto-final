@@ -6,10 +6,9 @@
     margin: auto 1.5rem;
     padding-bottom: 2.5rem;
     .card{    
-        
         display: grid;
         width: 27rem;
-        height: 45rem;
+        height: 50rem;
         margin: 1rem 0;
         border-radius: 10px;
         background: map-get($map: $colors, $key:'bg' );
@@ -212,7 +211,7 @@
         .card{
             display: flex;
             width: 60rem;
-            height: 8vh;
+            height: 80vh;
             transition: .3 ease-in-out;
             img{
                 width: 100%;

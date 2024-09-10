@@ -10,7 +10,7 @@
 .trabajos .card {
   display: grid;
   width: 27rem;
-  height: 45rem;
+  height: 50rem;
   margin: 1rem 0;
   border-radius: 10px;
   background: hsla(192, 15%, 94%, 0.5);
@@ -470,7 +470,7 @@ header nav ul li .icons {
   .trabajos .card {
     display: flex;
     width: 60rem;
-    height: 8vh;
+    height: 80vh;
     transition: 0.3 ease-in-out;
   }
   .trabajos .card img {
