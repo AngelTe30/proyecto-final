@@ -39,9 +39,9 @@
     width: 100vw;
     .card-blog{
         display: grid;
-        width: 40rem;
+        width: 90vw;
         height: 45rem;
-        margin: 1rem 0;
+        margin: 1rem auto;
         border-radius: 10px;
         background: map-get($map: $colors, $key:'bg' );
         overflow: hidden;
@@ -52,12 +52,12 @@
         .content{
             text-align: center;
             h4{
-                font-size: 6rem;
+                font-size: 2rem;
                 padding-bottom: .75rem;
                 color: map-get($map: $colors, $key:'primary' );
             }
             p{
-                font-size: 5rem;
+                font-size: 1rem;
                 color: map-get($map: $colors, $key:'secondary' );
             }
         }
