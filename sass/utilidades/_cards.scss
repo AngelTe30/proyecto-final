@@ -1,0 +1,330 @@
+.trabajos{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    margin: auto 1.5rem;
+    padding-bottom: 2.5rem;
+    .card{    
+        
+        display: grid;
+        width: 27rem;
+        height: 45rem;
+        margin: 1rem 0;
+        border-radius: 10px;
+        background: map-get($map: $colors, $key:'bg' );
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        h4{
+            color: map-get($map: $colors, $key:'primary' );
+            padding-top: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        p{
+            font-size: 24px;
+            text-align: center;
+            color: map-get($map: $colors, $key:'secondary' );
+            padding: 1rem;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.blog{
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    .card-blog{
+        display: grid;
+        width: 40rem;
+        height: 45rem;
+        margin: 1rem 0;
+        border-radius: 10px;
+        background: map-get($map: $colors, $key:'bg' );
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 30vh;
+        }
+        .content{
+            text-align: center;
+            h4{
+                font-size: 6rem;
+                padding-bottom: .75rem;
+                color: map-get($map: $colors, $key:'primary' );
+            }
+            p{
+                font-size: 5rem;
+                color: map-get($map: $colors, $key:'secondary' );
+            }
+        }
+    }
+}
+
+
+.servicios {
+    justify-content: center;
+    align-items: center;
+    .card-servicios{
+        padding-bottom: 3rem;
+        margin: 0 auto;
+        height: 35rem;
+        width: 90vw;
+        padding: 0;
+        border: 1px solid map-get($map: $colors, $key: 'card');
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        img{
+            width: 100%;
+        }
+        h4{
+            padding-bottom: 1rem;
+            font-size: 5vw;
+            color: map-get($map: $colors, $key:'primary' )
+        }
+        p, ul{       
+            font-size: 4vw;
+            color: map-get($map: $colors, $key:'secondary' )
+        }
+        ul{
+            b{
+                font-size: 4.5vw;
+            }
+        }
+    }
+    .us-work{
+        @include margin( auto,0);
+        height: 40rem;
+        width: 60vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        h3{
+            font-size: 5vw;
+            color: map-get($map: $colors, $key:'primary');
+        }
+        p{
+            color: map-get($map: $colors, $key:'secondary' );
+            b{
+                font-size: 5vw;
+            }
+        }
+        ul{
+            padding-top: 1rem;
+            li{
+                color: map-get($map: $colors, $key:'secondary' );
+                @include margin( .5rem,0);
+            }
+        }
+    }
+}
+
+
+
+@mixin card-tablet{
+    .trabajos{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background: map-get($map: $colors, $key:'bg' );
+    }
+    .blog{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        
+        .card-blog{
+            margin: 2rem auto; 
+            width: 80vw;
+            height: 80vh;
+            background: map-get($map: $colors, $key:'bg' );
+            .content{
+                padding: 2rem;
+                h4{
+                    font-size: 5vw;
+                    padding-bottom: 2rem;
+                }
+                p{
+
+                    font-size: 2.75vw;
+                }
+            }
+        }
+    }
+    .servicios{
+        margin-bottom: 2rem;
+        .card-servicios{
+            height: 70rem;
+            width: 80vw;
+            h4{
+                padding-bottom: 1rem;
+                font-size: 6vw;
+                color: map-get($map: $colors, $key:'primary' )
+            }
+            p, ul{       
+                font-size: 3vw;
+                color: map-get($map: $colors, $key:'secondary' )
+            }
+            ul{
+                padding-top: 1rem;
+                b{
+                    font-size: 3.5vw;
+                }
+            }
+        }
+        .us-work{
+            
+            height: 60rem;
+            width: 60vw;
+            h3{
+                font-size: 6vw;
+                color: map-get($map: $colors, $key:'primary');
+            }
+            p{
+                font-size: 4vw;
+                color: map-get($map: $colors, $key:'secondary' );
+                b{
+                    font-size: 5vw;
+                }
+            }
+            ul{
+                li{
+                   font-size: 4vw;
+                    
+                }
+            }
+        }
+    }
+    
+}
+
+@mixin card-desktop{
+    .trabajos{
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        .card{
+            display: flex;
+            width: 60rem;
+            height: 8vh;
+            transition: .3 ease-in-out;
+            img{
+                width: 100%;
+                display: block;
+                transition: transform .5s ease;
+            }
+            .content{
+                position: absolute;
+                display: grid;
+                top: 0;
+                left: 0;
+                margin-left: 61%;
+                width: 40%;
+                height: 100%;
+                border-radius: 0 5px 5px 0;
+                background: map-get($map: $colors, $key:'card' );
+                opacity: 0;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                transition: 0.5s ease, transform .5s ease;
+                transform: translateY(100);
+                h4{
+                    color: map-get($map: $colors, $key: 'primary');
+                }
+                p{
+
+                    color: map-get($map: $colors, $key: 'secondary');
+                }
+            }
+            &:hover{
+                img{
+                    transform: scale(1.1);
+
+                }
+                .content{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }  
+    }    
+    .blog{
+        .card-blog{
+            display: flex;
+            img{
+                width: 50%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .content{
+                display: grid;
+                padding: 2rem;
+                h4{
+                    height: 10rem;
+                    font-size: 2rem;
+                    padding: 0;
+                }
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }   
+    .servicios{
+        margin-bottom: 2rem;
+        .card-servicios{
+            display: grid;
+            width: 30vw;
+            height: 40rem;
+            margin-bottom: 5rem;
+            .content{
+                overflow-y: scroll;
+                h4{
+                    padding-bottom: 1rem;
+                    font-size: 2vw;
+                    color: map-get($map: $colors, $key:'primary' )
+                }
+                p, ul{       
+                    font-size: 1vw;
+                    color: map-get($map: $colors, $key:'secondary' )
+                }
+                ul{
+                    padding-top: 1.25rem;
+                    b{
+                        font-size: 1.25vw;
+                    }
+                }
+            }
+        }
+        .us-work{
+            padding: 5rem;
+            height: 60rem;
+            h3{
+                font-size: 3vw;
+                color: map-get($map: $colors, $key:'primary');
+            }
+            p{
+                font-size: 2vw;
+                color: map-get($map: $colors, $key:'secondary' );
+                b{
+                    font-size: 2.5vw;
+                }
+            }
+            ul{
+                li{
+                   font-size: 1.75vw;
+                    
+                }
+            }
+        }
+    }
+    
+}

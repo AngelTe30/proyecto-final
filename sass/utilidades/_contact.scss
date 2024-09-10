@@ -1,0 +1,91 @@
+.contact{
+    background-color: map-get($map: $colors, $key: 'nav-text');
+    display: grid;
+    margin: 3rem auto;
+    width: 80vw;
+    text-align: center;
+    border-radius: 10px;
+    .form-group{
+        display: grid;
+        input,textarea{
+            border-radius: 5px;
+            margin: 1rem ;
+            background-color: map-get($map: $colors, $key:'bg' );
+            border: 1px solid map-get($map: $colors, $key:'primary' );
+        }
+        input{
+            height: 2.5rem;
+            padding-left: .5rem;
+        }
+        textarea{
+            resize: none;
+            padding-left: .5rem;
+            padding-top: .5rem;
+        }
+        label{
+            padding-top: 1rem;
+        }
+    }
+    button{
+        margin: 1rem;
+        width: 90%;
+        height: 3rem;
+        border-radius: 5px;
+        background-color: map-get($map: $colors , $key:'primary' );
+        color: map-get($map: $colors, $key:'nav-text' );
+        transition: all .5s ease;
+        &:hover{
+            background-color: map-get($map: $colors, $key:'secondary' );
+            
+        }
+    }
+}
+
+
+@mixin contact-tablet{
+    .contact{
+        height: 70vh;
+        width: 60vw;
+        .form-group{
+            input,textarea{
+                margin: .5rem 2rem;
+            }
+            label{
+                font-size: 1.5rem;
+            }
+            input{
+                height: 3rem;
+                font-size: 1.25rem;
+            }
+            textarea{
+                font-size: 1.25rem;
+            }
+        }
+        button{
+            align-items: center;
+            margin: .5rem auto;
+            width: 70%;
+            &:hover{
+                background-color: map-get($map: $colors, $key:'secondary' );
+                
+            }
+        }
+    }
+}
+
+@mixin contact-desktop{
+    .contact{
+        width: 40vw;
+        height: 110vh;
+        padding-bottom: 10rem;
+        .form-group{
+            input,textarea{
+                font-size: .75rem;
+            }
+            textarea{
+                margin: 2rem;
+                overflow-y: scroll;
+            } 
+        }
+    }
+}

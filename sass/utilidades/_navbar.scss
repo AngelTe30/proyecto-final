@@ -1,0 +1,41 @@
+
+/*mobile*/
+header{
+    @include center(center,center);
+    position:fixed;
+    @include display(flex);
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    z-index: 1000;
+    background: map-get($map: $colors, $key:'primary' );
+    .logo{
+        @include display(none);
+    }
+    nav{
+        @include reset;
+        @include margin(auto,0);
+        ul{
+            @include display(flex);
+            @include margin(auto,0);
+            @include center(center,center);
+            li{
+                @include margin(1rem,0);
+                list-style: none;
+                .links{
+                    @include display(none);
+                    color: map-get($map: $colors, $key:'nav-text' );
+                    
+                }
+                .icons{
+                    color: map-get($map: $colors, $key:'nav-text' );
+                }
+            }
+        }
+    }
+}
+
+@include tablet;
+@include desktop;
+
+

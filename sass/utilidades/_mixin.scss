@@ -1,0 +1,160 @@
+@mixin center ($ps,$sp){
+    align-items:$ps;
+    justify-content: $sp;
+}
+
+@mixin reset{
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+    }
+}
+
+@mixin margin($px,$padding) {
+    margin:$px;
+    padding: $padding;
+}
+
+@mixin display($ds){
+    display: $ds;
+}
+
+@mixin tablet{
+    @media (min-width: 800px) {
+        @include card-tablet;
+        header{
+            @include center(center,space-between);
+            .logo{
+                @include display(flex);
+                height: 5rem;
+                h1{
+                    @include display(none);
+                    @include margin(0,0 )
+                }
+            }
+            nav{
+                @include margin(6.5rem,0);
+                ul{
+                    li{
+                        a{
+                            @include margin(1.5rem,0);
+                        }
+                    }
+                }
+            }
+        }
+        @include contact-tablet();
+        .us{
+            padding: 5rem;
+            display: grid;
+            h2{
+                text-align: center;
+                font-size: 5vh;
+                color: map-get($map: $colors, $key:'primary' );
+            }
+            p{
+                font-size: 3vh;
+                color: map-get($map: $colors, $key:'secondary' );
+            }
+            ul{
+                margin-left: 5rem;
+                li{
+                font-size: 3vh;
+                color: map-get($map: $colors, $key:'secondary' );
+            }
+        }
+        }
+    }
+    
+}
+
+@mixin desktop{
+    @media (min-width: 1200px){
+        @include reset();
+        header
+        {
+            @include display(flex);
+            position:static;
+            height: 6rem;
+            @include center(center,space-between);
+            @include margin(0,0);
+            .logo{
+                @include display (flex);
+                @include center(center,none);
+                @include margin(.25rem,0 );
+                img{
+                    padding-left: 5rem;
+                    height: 6rem;
+                }
+            }
+            nav{
+                @include center(center,center);
+                ul{
+
+                    li{
+
+                        display: flex;
+                        .links{
+                            @include display(flex);
+                            color: map-get($map: $colors, $key:'nav-text');
+                        }
+                        .icons{
+                            @include margin(auto,0);
+                            @include display(flex);
+                        }
+                    }
+                }
+            }
+        }
+        .info{
+            padding-top: 10rem;
+            h4{
+                font-size: 30vw;
+                padding: 0 5vw;
+            }
+            p{
+                font-size: 15rem;
+                padding: 0 5vw;
+            }
+        }
+        @include contact-desktop;
+        .us{
+            margin: auto;
+            h2{
+                text-align: center;
+                font-size: 3vh;
+                
+                color: map-get($map: $colors, $key:'primary' );
+            }
+            p{
+                text-align: center;
+                font-size: 2vh;
+                color: map-get($map: $colors, $key:'secondary' );
+            }
+            ul{
+                margin-left: 5rem;
+                li{
+                    font-size: 3vh;
+                    color: map-get($map: $colors, $key:'secondary' );
+                 }
+            }
+        }
+
+        .name-enterprise{
+            font-size: xx-large;
+            @include margin(0,2rem);
+        }
+        #carouselExampleCaptions{
+            @include center(center,center);
+            @include margin(auto,0);
+            width: 50%;
+            overflow: hidden;
+            transition:  .3s ease-in-out;
+        }
+        
+        @include card-desktop;
+    }
+    
+}
